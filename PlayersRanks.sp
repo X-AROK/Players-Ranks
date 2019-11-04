@@ -150,7 +150,6 @@ public Action OnChatMessage(int &iClient, Handle hRecipients, char[] sName, char
 		char sFeature[192];
 		GetClientCookie(iClient, g_hCookie, sBuffer, 192);
 		VIP_GetClientFeatureString(iClient, "Chat_Prefix", sFeature, sizeof(sFeature));
-		PrintToServer("%s - %s", sBuffer, sFeature);
 		if(!(sBuffer[0] == '0' || (StrEqual(sFeature, "custom") && StrEqual(sBuffer, "")))){
 			return Plugin_Continue;
 		}
